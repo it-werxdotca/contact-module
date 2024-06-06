@@ -30,7 +30,7 @@ Route::group([], function () {
 |
 */
 
-Route::get('contact-us', [ContactController::class, 'index']);
-Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+//Route::get('contact', [ContactController::class, 'index']);
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
 });

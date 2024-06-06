@@ -16,7 +16,7 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('contact.store') }}" id="contactUSForm">
+                        <form method="POST" action="{{ route('contact.store') }}" id="contactForm">
                             {{ csrf_field() }}
 
                             <div class="row">

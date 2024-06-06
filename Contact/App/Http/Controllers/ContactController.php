@@ -1,14 +1,14 @@
 <?php
 
-namespace Modules\Contact\app\Http\Controllers;
+namespace Modules\Contact\App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Modules\Contact\App\Models\Contact;
 
-class ContactController extends Controller
+class ContactController extends BaseController
 {
     /**
      * Write code on Method
