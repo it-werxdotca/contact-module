@@ -1,6 +1,6 @@
 {
     "name": "nwidart/contact",
-    "description": "",
+    "description": "A simple contact module for nwidart/laravel-modules. It stores information sent from the contact form into an SQL table, send an email to the sender and a configurable email address.,
     "authors": [
         {
             "name": "Nicolas Widart",

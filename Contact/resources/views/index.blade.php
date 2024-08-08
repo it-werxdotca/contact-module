@@ -15,6 +15,7 @@
                                 {{Session::get('success')}}
                             </div>
                         @endif
+                        This is from the module View directory.
 
                         <form method="POST" action="{{ route('contact.store') }}" id="contactForm">
                             {{ csrf_field() }}
@@ -23,7 +24,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <strong>Name:</strong>
-                                        <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
+                                        <input type="text" name="name" class="form-control" placeholder="Full name" value="{{ old('name') }}">
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
