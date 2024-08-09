@@ -55,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
             // Ensure the modules status file exists and is readable
             $modulesStatusPath = base_path('modules_statuses.json');
             if (!File::exists($modulesStatusPath) || !File::isReadable($modulesStatusPath)) {
-                Log::warning("AppServiceProvider: Modules statuses file is missing or not readable at {$modulesStatusPath}");
+                //Log::warning("AppServiceProvider: Modules statuses file is missing or not readable at {$modulesStatusPath}");
                 return null;
             }
 

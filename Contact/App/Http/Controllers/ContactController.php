@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Modules\Contact\App\Models\Contact;
+use Modules\Contact\App\Mail\ContactMail;
 
 class ContactController extends BaseController
 {
@@ -39,11 +40,11 @@ class ContactController extends BaseController
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required|digits:10|numeric',
-            'subject' => 'required',
-            'message' => 'required'
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:255',
+            'phone' => ['required', 'regex:/^\d{3}-\d{3}-\d{4}$/'],
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|max:1000',
         ]);
 
         try {
@@ -56,21 +57,13 @@ class ContactController extends BaseController
                 'message' => $request->message,
             ]);
 
-            // Send email to the user
-            Mail::send([], [], function ($message) use ($request) {
-                $message->to($request->email)
-                        ->subject('Contact Form Submission')
-                        ->setBody("Name: {$request->name}\nEmail: {$request->email}\nPhone: {$request->phone}\nSubject: {$request->subject}\nMessage: {$request->message}");
-            });
+            // Retrieve the CC email address from the config file
+            $ccEmail = Config::get('contact.contact-email');
 
-            // Send a CC email to the admin
-            Mail::send([], [], function ($message) use ($request) {
-                $message->cc('admin@example.com')
-                        ->subject('Contact Form Submission')
-                        ->setBody("Name: {$request->name}\nEmail: {$request->email}\nPhone: {$request->phone}\nSubject: {$request->subject}\nMessage: {$request->message}");
-            });
-
-            Log::info('ContactController@store: Email sent successfully.');
+            // Send email to the user with CC
+            Mail::to($request->email)
+                ->cc($ccEmail)  // Use the retrieved CC email address from the config.php file.
+                ->send(new ContactMail($request));
 
         } catch (\Exception $e) {
             Log::error("ContactController@store: Failed - {$e->getMessage()}");
