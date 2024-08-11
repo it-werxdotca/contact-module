@@ -5,9 +5,20 @@
     "authors": [
         {
             "name": "Ron Mac Quarrie",
-            "email": "coding.laravel@it-werx.ca"
+            "email": "git@it-werx.ca",
+            "homepage": "https://it-werx.ca",
+            "role": "Developer"
         }
     ],
+    "keywords": [
+        "modules",
+        "laravel",
+        "nwidart",
+        "module",
+        "contact",
+        "form"
+      ],
+    "license": "MIT",
     "extra": {
         "laravel": {
             "providers": [
@@ -28,5 +39,11 @@
         "psr-4": {
             "Modules\\Contact\\Tests\\": "tests/"
         }
-    }
+    },
+    "branch-alias": {
+          "dev-master": "1.0.0-dev"
+        }
+      },
+    "minimum-stability": "dev",
+      "prefer-stable": true
 }
