@@ -1,10 +1,11 @@
 {
-    "name": "nwidart/contact",
+    "name": "it-werxdotca/laravel-contact-module",
     "description": "A simple contact module for nwidart/laravel-modules. It stores information sent from the contact form into an SQL table, sends an email to the sender and a configurable email address.",
+    "type": "laravel-module",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Ron Mac Quarrie",
+            "email": "coding.laravel@it-werx.ca"
         }
     ],
     "extra": {
