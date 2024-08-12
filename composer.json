@@ -1,12 +1,24 @@
 {
-    "name": "nwidart/contact",
+    "name": "it-werxdotca/laravel-contact-module",
     "description": "A simple contact module for nwidart/laravel-modules. It stores information sent from the contact form into an SQL table, sends an email to the sender and a configurable email address.",
+    "type": "laravel-module",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Ron Mac Quarrie",
+            "email": "git@it-werx.ca",
+            "homepage": "https://it-werx.ca",
+            "role": "Developer"
         }
     ],
+    "keywords": [
+        "modules",
+        "laravel",
+        "nwidart",
+        "module",
+        "contact",
+        "form"
+    ],
+    "license": "MIT",
     "extra": {
         "laravel": {
             "providers": [
@@ -17,15 +29,20 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Contact\\": "",
-            "Modules\\Contact\\App\\": "app/",
-            "Modules\\Contact\\Database\\Factories\\": "database/factories/",
-            "Modules\\Contact\\Database\\Seeders\\": "database/seeders/"
+            "Modules\\Contact\\": "Modules/Contact/",
+            "Modules\\Contact\\App\\": "Modules/Contact/App/",
+            "Modules\\Contact\\Database\\Factories\\": "Modules/Contact/database/factories/",
+            "Modules\\Contact\\Database\\Seeders\\": "Modules/Contact/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Modules\\Contact\\Tests\\": "tests/"
+            "Modules\\Contact\\Tests\\": "Modules/Contact/tests/"
         }
-    }
+    },
+    "branch-alias": {
+        "dev-master": "1.0.0-dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
