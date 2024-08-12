@@ -33,7 +33,7 @@ class ContactController extends BaseController
         } else {
             // Log error and handle view not found
             Log::error("View [contact.{$viewName}] not found in theme [{$activeTheme}] or module [Contact].");
-            abort(404, "View [contact.{$viewName}] not found.");
+            //abort(404, "View [contact.{$viewName}] not found.");
         }
     }
 
