@@ -55,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
             // Ensure the modules status file exists and is readable
             $modulesStatusPath = base_path('modules_statuses.json');
             if (!File::exists($modulesStatusPath) || !File::isReadable($modulesStatusPath)) {
-                //Log::warning("AppServiceProvider: Modules statuses file is missing or not readable at {$modulesStatusPath}");
+                Log::warning("AppServiceProvider: Modules statuses file is missing or not readable at {$modulesStatusPath}");
                 return null;
             }
 
@@ -83,7 +83,7 @@ class AppServiceProvider extends ServiceProvider
                 $viewsPath = $module->getPath() . '/resources/views'; // Fixed path
 
                 if (is_dir($viewsPath)) {
-                    Log::info("AppServiceProvider: Module view path found for {$module->getName()} at {$viewsPath}");
+                    //Log::info("AppServiceProvider: Module view path found for {$module->getName()} at {$viewsPath}");
                     return $viewsPath;
                 } else {
                     Log::warning("AppServiceProvider: Module view path does not exist for {$module->getName()} at {$viewsPath}");

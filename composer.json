@@ -2,6 +2,7 @@
     "name": "it-werxdotca/contact-module",
     "description": "A simple contact module for nwidart/laravel-modules. It stores information sent from the contact form into an SQL table, sends an email to the sender and a configurable email address.",
     "type": "laravel-module",
+    "version": "1.0.0-dev",
     "authors": [
         {
             "name": "Ron Mac Quarrie",
@@ -27,9 +28,15 @@
             "aliases": {}
         }
     },
+    "require": {
+        "php": "^8.3",
+        "laravel/framework": "^10.0",
+        "nwidart/laravel-modules": "^10.0"
+        // Other dependencies...
+    },
     "autoload": {
         "psr-4": {
-            "Modules\\Contact\\": "Modules/Contact/",
+            "Modules\\Contact\\": "Modules/Contact",
             "Modules\\Contact\\App\\": "Modules/Contact/App/",
             "Modules\\Contact\\Database\\Factories\\": "Modules/Contact/database/factories/",
             "Modules\\Contact\\Database\\Seeders\\": "Modules/Contact/database/seeders/"
@@ -39,9 +46,6 @@
         "psr-4": {
             "Modules\\Contact\\Tests\\": "Modules/Contact/tests/"
         }
-    },
-    "branch-alias": {
-        "dev-master": "1.0.0-dev"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
