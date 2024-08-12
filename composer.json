@@ -30,9 +30,8 @@
     },
     "require": {
         "php": "^8.3",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^10.3",
         "nwidart/laravel-modules": "^10.0"
-        // Other dependencies...
     },
     "autoload": {
         "psr-4": {
